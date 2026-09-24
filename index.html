@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>XLM SPIDER — Enter the Web</title>
+
+<meta name="description"
+content="XLM SPIDER — A cinematic Stellar-based digital asset project built around the spider web of the XLM ecosystem.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:#fff;
+    font-family:'Rajdhani',sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --red:#ff163d;
+    --dark-red:#8d001b;
+    --black:#030303;
+    --panel:#0c0c0f;
+    --silver:#d8d8d8;
+    --cyan:#00e5ff;
+    --gold:#ffc400;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-10;
+
+    background:
+        radial-gradient(circle at 50% 10%,rgba(255,0,40,.22),transparent 28%),
+        radial-gradient(circle at 15% 70%,rgba(255,0,30,.08),transparent 25%),
+        radial-gradient(circle at 90% 80%,rgba(255,0,30,.08),transparent 25%),
+        linear-gradient(145deg,#020202,#0b0003 50%,#020202);
+
+    pointer-events:none;
+}
+
+/* red cinematic glow */
+
+body::after{
+    content:"";
+    position:fixed;
+    width:700px;
+    height:700px;
+    left:50%;
+    top:10%;
+    transform:translateX(-50%);
+    border-radius:50%;
+    background:rgba(255,0,30,.05);
+    filter:blur(100px);
+    z-index:-9;
+}
+
+/* =========================
+   WEB
+========================= */
+
+.web{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.25;
+    z-index:-5;
+}
+
+.web span{
+    position:absolute;
+    left:50%;
+    top:35%;
+    width:2px;
+    height:100vh;
+    background:linear-gradient(transparent,rgba(255,255,255,.18),transparent);
+    transform-origin:top;
+}
+
+.web span:nth-child(1){transform:rotate(0deg)}
+.web span:nth-child(2){transform:rotate(30deg)}
+.web span:nth-child(3){transform:rotate(60deg)}
+.web span:nth-child(4){transform:rotate(90deg)}
+.web span:nth-child(5){transform:rotate(120deg)}
+.web span:nth-child(6){transform:rotate(150deg)}
+
+.web-ring{
+    position:absolute;
+    width:700px;
+    height:700px;
+    left:50%;
+    top:0;
+    transform:translateX(-50%);
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:50%;
+}
+
+.web-ring:nth-child(8){
+    width:500px;
+    height:500px;
+    top:100px;
+}
+
+.web-ring:nth-child(9){
+    width:300px;
+    height:300px;
+    top:200px;
+}
+
+/* =========================
+   NAV
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 7%;
+
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,20,55,.25);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-family:'Orbitron',sans-serif;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.brand-dot{
+    width:13px;
+    height:13px;
+    background:var(--red);
+    border-radius:50%;
+    box-shadow:
+        0 0 10px var(--red),
+        0 0 30px var(--red);
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:700;
+    letter-spacing:1px;
+    transition:.25s;
+}
+
+nav a:hover{
+    color:var(--red);
+    text-shadow:0 0 15px var(--red);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    padding:120px 20px 70px;
+
+    position:relative;
+}
+
+.hero-content{
+    max-width:1000px;
+    animation:heroIn 1.3s ease forwards;
+}
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   SPIDER LOGO
+========================= */
+
+.logo{
+    width:180px;
+    height:180px;
+    margin:0 auto 30px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle,#222 0 30%,#070707 31% 65%,#1a0005 66%);
+
+    border:2px solid rgba(255,20,60,.8);
+
+    box-shadow:
+        0 0 25px rgba(255,0,50,.4),
+        inset 0 0 40px rgba(255,0,50,.2);
+
+    animation:logoPulse 3s infinite;
+}
+
+@keyframes logoPulse{
+    0%,100%{
+        box-shadow:
+        0 0 25px rgba(255,0,50,.4),
+        inset 0 0 40px rgba(255,0,50,.2);
+    }
+
+    50%{
+        box-shadow:
+        0 0 60px rgba(255,0,50,.75),
+        inset 0 0 60px rgba(255,0,50,.3);
+    }
+}
+
+.xlm-coin{
+    width:85px;
+    height:85px;
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle at 35% 30%,#fff,#aaa 20%,#444 55%,#111 100%);
+
+    border:4px solid #eee;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-family:'Orbitron';
+    font-size:22px;
+    font-weight:900;
+
+    color:#111;
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,.35);
+}
+
+.spider{
+    position:absolute;
+    font-size:65px;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    filter:drop-shadow(0 0 8px #ff163d);
+}
+
+.hero h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:clamp(48px,9vw,105px);
+    font-weight:900;
+    letter-spacing:6px;
+
+    background:linear-gradient(
+        180deg,
+        #fff 0%,
+        #ff395c 35%,
+        #ff002d 70%,
+        #75000f 100%
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+
+    text-shadow:0 0 40px rgba(255,0,45,.2);
+}
+
+.hero h2{
+    font-family:'Orbitron';
+    color:#aaa;
+    letter-spacing:6px;
+    margin-top:5px;
+}
+
+.hero p{
+    max-width:760px;
+    margin:30px auto;
+
+    font-size:20px;
+    line-height:1.7;
+    color:#ccc;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+    padding:15px 28px;
+    border-radius:5px;
+
+    font-family:'Orbitron';
+    font-size:13px;
+    font-weight:800;
+
+    text-decoration:none;
+
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.btn-red{
+    background:var(--red);
+    color:#fff;
+    border:1px solid #ff4966;
+
+    box-shadow:
+        0 0 20px rgba(255,0,45,.35);
+}
+
+.btn-red:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 0 40px rgba(255,0,45,.65);
+}
+
+.btn-dark{
+    background:#080808;
+    color:#fff;
+    border:1px solid #444;
+}
+
+.btn-dark:hover{
+    border-color:var(--red);
+    color:var(--red);
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    padding:110px 7%;
+    position:relative;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-family:'Orbitron';
+    font-size:clamp(30px,5vw,55px);
+}
+
+.section-title span{
+    color:var(--red);
+}
+
+.section-title p{
+    margin-top:15px;
+    color:#888;
+    font-size:18px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,0,40,.025));
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:35px;
+
+    min-height:230px;
+
+    position:relative;
+
+    transition:.35s;
+
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:3px;
+    height:100%;
+
+    background:var(--red);
+
+    box-shadow:0 0 25px var(--red);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(255,20,60,.5);
+
+    box-shadow:
+        0 20px 60px rgba(255,0,40,.12);
+}
+
+.card-icon{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    font-family:'Orbitron';
+    margin-bottom:12px;
+    color:#fff;
+}
+
+.card p{
+    color:#aaa;
+    line-height:1.7;
+    font-size:17px;
+}
+
+/* =========================
+   ECONOMIC VISION
+========================= */
+
+.vision{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.vision-text h2{
+    font-family:'Orbitron';
+    font-size:45px;
+    margin-bottom:25px;
+}
+
+.vision-text h2 span{
+    color:var(--red);
+}
+
+.vision-text p{
+    color:#aaa;
+    font-size:19px;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.graph{
+    height:400px;
+    position:relative;
+
+    background:
+        linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    overflow:hidden;
+}
+
+.graph::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:40px;
+    height:3px;
+
+    background:var(--red);
+
+    transform:
+        rotate(-25deg)
+        scaleX(1.5);
+
+    box-shadow:
+        0 0 15px var(--red),
+        0 0 35px var(--red);
+}
+
+.arrow{
+    position:absolute;
+    right:40px;
+    top:45px;
+
+    font-size:70px;
+    color:var(--red);
+
+    filter:drop-shadow(0 0 20px var(--red));
+
+    animation:float 2s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-15px)}
+}
+
+/* =========================
+   TOKEN INFO
+========================= */
+
+.token-box{
+    max-width:1000px;
+    margin:auto;
+
+    background:#090909;
+
+    border:1px solid rgba(255,20,55,.3);
+
+    padding:35px;
+
+    box-shadow:
+        0 0 60px rgba(255,0,40,.06);
+}
+
+.token-row{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+
+    padding:20px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.token-row:last-child{
+    border-bottom:none;
+}
+
+.token-label{
+    color:#777;
+    font-family:'Orbitron';
+    font-size:13px;
+}
+
+.token-value{
+    color:#fff;
+    text-align:right;
+    word-break:break-all;
+}
+
+.issuer{
+    color:#ff395c;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.action{
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:10px;
+
+    background:#101014;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+}
+
+.action:nth-child(1){
+    border-color:#00e5ff;
+}
+
+.action:nth-child(2){
+    border-color:#ffc400;
+}
+
+.action:nth-child(3){
+    border-color:#ff3560;
+}
+
+.action:hover{
+    transform:translateY(-8px);
+}
+
+.action h3{
+    font-family:'Orbitron';
+    margin-bottom:15px;
+}
+
+.action p{
+    color:#888;
+    margin-bottom:25px;
+    min-height:55px;
+}
+
+.action-btn{
+    display:inline-block;
+    padding:13px 20px;
+
+    border-radius:4px;
+
+    color:#000;
+
+    font-family:'Orbitron';
+    font-weight:900;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.action:nth-child(1) .action-btn{
+    background:#00e5ff;
+    box-shadow:0 0 20px rgba(0,229,255,.3);
+}
+
+.action:nth-child(2) .action-btn{
+    background:#ffc400;
+    box-shadow:0 0 20px rgba(255,196,0,.25);
+}
+
+.action:nth-child(3) .action-btn{
+    background:#ff3560;
+    color:#fff;
+    box-shadow:0 0 20px rgba(255,53,96,.3);
+}
+
+/* =========================
+   SPIDERS
+========================= */
+
+.spider-float{
+    position:fixed;
+    z-index:-2;
+
+    font-size:30px;
+
+    opacity:.55;
+
+    animation:spiderMove linear infinite;
+}
+
+.s1{
+    left:8%;
+    top:30%;
+    animation-duration:13s;
+}
+
+.s2{
+    left:80%;
+    top:45%;
+    animation-duration:18s;
+}
+
+.s3{
+    left:15%;
+    top:75%;
+    animation-duration:20s;
+}
+
+.s4{
+    left:90%;
+    top:15%;
+    animation-duration:16s;
+}
+
+@keyframes spiderMove{
+    0%{
+        transform:translateY(-80px) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.7;
+    }
+
+    50%{
+        transform:translateY(300px) rotate(180deg);
+        opacity:.5;
+    }
+
+    100%{
+        transform:translateY(800px) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:60px 20px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    color:#555;
+}
+
+footer strong{
+    color:var(--red);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:800px){
+
+    nav{
+        padding:15px 5%;
+    }
+
+    nav .links{
+        display:none;
+    }
+
+    .cards,
+    .actions,
+    .vision{
+        grid-template-columns:1fr;
+    }
+
+    .vision-text h2{
+        font-size:34px;
+    }
+
+    .graph{
+        height:300px;
+    }
+
+    section{
+        padding:80px 5%;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero h1{
+        letter-spacing:3px;
+    }
+
+    .token-row{
+        flex-direction:column;
+    }
+
+    .token-value{
+        text-align:left;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND WEB -->
+
+<div class="web">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <div class="web-ring"></div>
+    <div class="web-ring"></div>
+    <div class="web-ring"></div>
+
+</div>
+
+<!-- FLOATING SPIDERS -->
+
+<div class="spider-float s1">🕷️</div>
+<div class="spider-float s2">🕷️</div>
+<div class="spider-float s3">🕷️</div>
+<div class="spider-float s4">🕷️</div>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="brand">
+        <div class="brand-dot"></div>
+        XLM SPIDER
+    </div>
+
+    <div class="links">
+        <a href="#about">ABOUT</a>
+        <a href="#vision">VISION</a>
+        <a href="#token">TOKEN</a>
+        <a href="#access">ACCESS</a>
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="logo">
+
+            <div class="xlm-coin">
+                XLM
+            </div>
+
+            <div class="spider">
+                🕷️
+            </div>
+
+        </div>
+
+        <h1>XLM SPIDER</h1>
+
+        <h2>THE WEB OF XLM</h2>
+
+        <p>
+            وارد شبکه‌ای شو که هر تار آن به یک مسیر جدید در اکوسیستم Stellar متصل می‌شود.
+            XLM SPIDER یک پروژه دیجیتال مبتنی بر Stellar است که با هویت
+            تاریک، خشن و آینده‌نگر ساخته شده است.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#token" class="btn btn-red">
+                ENTER THE WEB
+            </a>
+
+            <a href="#access" class="btn btn-dark">
+                TOKEN ACCESS
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>WELCOME TO THE <span>WEB</span></h2>
+
+        <p>
+            یک پروژه، یک شبکه، هزاران مسیر.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">🕷️</div>
+
+            <h3>THE SPIDER</h3>
+
+            <p>
+                عنکبوت نماد ساختن، اتصال و صبر است.
+                XLM SPIDER همین مفهوم را وارد دنیای دارایی‌های دیجیتال می‌کند.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">✦</div>
+
+            <h3>STELLAR POWER</h3>
+
+            <p>
+                این پروژه روی شبکه Stellar طراحی شده تا هویت آن
+                با سرعت و زیرساخت این اکوسیستم گره بخورد.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">⚡</div>
+
+            <h3>BUILD THE FUTURE</h3>
+
+            <p>
+                هدف فقط ساخت یک توکن نیست؛
+                هدف ساخت یک برند دیجیتال با هویت مشخص و مسیر توسعه روشن است.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VISION -->
+
+<section id="vision">
+
+    <div class="section-title">
+
+        <h2>THE <span>RISE</span></h2>
+
+        <p>
+            ساختن ارزش از یک ایده تا یک اکوسیستم.
+        </p>
+
+    </div>
+
+
+    <div class="vision">
+
+        <div class="vision-text">
+
+            <h2>
+                FROM ONE <span>SPIDER</span>
+                TO A WHOLE WEB
+            </h2>
+
+            <p>
+                هر پروژه بزرگ از یک نقطه شروع می‌شود.
+                XLM SPIDER برای ساختن یک هویت متفاوت در فضای Stellar طراحی شده است.
+            </p>
+
+            <p>
+                مسیر ما بر پایه توسعه، جامعه، شفافیت اطلاعات توکن
+                و ایجاد کاربردهای واقعی در آینده خواهد بود.
+            </p>
+
+            <p>
+                رشد واقعی زمانی اتفاق می‌افتد که محصول،
+                جامعه و کاربرد در کنار یکدیگر ساخته شوند.
+            </p>
+
+        </div>
+
+
+        <div class="graph">
+
+            <div class="arrow">
+                ↗
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TOKEN -->
+
+<section id="token">
+
+    <div class="section-title">
+
+        <h2>THE <span>TOKEN</span></h2>
+
+        <p>
+            مشخصات رسمی پروژه
+        </p>
+
+    </div>
+
+
+    <div class="token-box">
+
+        <div class="token-row">
+
+            <div class="token-label">
+                PROJECT
+            </div>
+
+            <div class="token-value">
+                XLM SPIDER
+            </div>
+
+        </div>
+
+
+        <div class="token-row">
+
+            <div class="token-label">
+                NETWORK
+            </div>
+
+            <div class="token-value">
+                Stellar Mainnet
+            </div>
+
+        </div>
+
+
+        <div class="token-row">
+
+            <div class="token-label">
+                ASSET CODE
+            </div>
+
+            <div class="token-value">
+                SPIDERXLM
+            </div>
+
+        </div>
+
+
+        <div class="token-row">
+
+            <div class="token-label">
+                ISSUER
+            </div>
+
+            <div class="token-value issuer">
+                GBX7RXOIQKA6PY5DPOMAGC4A5VVCXACRN74GIEW6ERW53SMAE5CFKVKE
+            </div>
+
+        </div>
+
+
+        <div class="token-row">
+
+            <div class="token-label">
+                STATUS
+            </div>
+
+            <div class="token-value">
+                Stellar-based digital asset project
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ACCESS -->
+
+<section id="access">
+
+    <div class="section-title">
+
+        <h2>ENTER THE <span>WEB</span></h2>
+
+        <p>
+            سه مسیر برای بررسی پروژه
+        </p>
+
+    </div>
+
+
+    <div class="actions">
+
+
+        <!-- BUTTON 1 -->
+
+        <div class="action">
+
+            <h3>ISSUER</h3>
+
+            <p>
+                مشاهده حساب رسمی صادرکننده دارایی در شبکه Stellar.
+            </p>
+
+            <a
+            class="action-btn"
+            target="_blank"
+            href="https://stellar.expert/explorer/public/account/GBX7RXOIQKA6PY5DPOMAGC4A5VVCXACRN74GIEW6ERW53SMAE5CFKVKE">
+
+                OPEN ISSUER
+
+            </a>
+
+        </div>
+
+
+        <!-- BUTTON 2 -->
+
+        <div class="action">
+
+            <h3>STELLAR EXPERT</h3>
+
+            <p>
+                بررسی اطلاعات شبکه و فعالیت‌های مرتبط با حساب پروژه.
+            </p>
+
+            <a
+            class="action-btn"
+            target="_blank"
+            href="https://stellar.expert/explorer/public/account/GBX7RXOIQKA6PY5DPOMAGC4A5VVCXACRN74GIEW6ERW53SMAE5CFKVKE">
+
+                EXPLORE
+
+            </a>
+
+        </div>
+
+
+        <!-- BUTTON 3 -->
+
+        <div class="action">
+
+            <h3>STELLAR LAB</h3>
+
+            <p>
+                ورود به ابزارهای Stellar برای بررسی و مدیریت دارایی.
+            </p>
+
+            <a
+            class="action-btn"
+            target="_blank"
+            href="https://lab.stellar.org/">
+
+                OPEN LAB
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>THE WEB IS <span>JUST BEGINNING</span></h2>
+
+        <p>
+            XLM SPIDER — Built on Stellar.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>XLM SPIDER</strong>
+    </p>
+
+    <p style="margin-top:10px;">
+        Stellar-based digital asset project
+    </p>
+
+</footer>
+
+
+<script>
+
+/* Spider particles */
+
+const body = document.body;
+
+for(let i = 0; i < 12; i++){
+
+    const spider = document.createElement("div");
+
+    spider.innerHTML = "🕷️";
+
+    spider.style.position = "fixed";
+    spider.style.left = Math.random()*100 + "%";
+    spider.style.top = Math.random()*100 + "%";
+    spider.style.fontSize = (12 + Math.random()*20) + "px";
+    spider.style.opacity = ".15";
+    spider.style.pointerEvents = "none";
+    spider.style.zIndex = "-1";
+
+    spider.animate(
+        [
+            {
+                transform:"translate(0,0) rotate(0deg)"
+            },
+            {
+                transform:
+                `translate(${Math.random()*180-90}px,
+                ${Math.random()*250-125}px)
+                rotate(180deg)`
+            },
+            {
+                transform:"translate(0,0) rotate(360deg)"
+            }
+        ],
+        {
+            duration:8000 + Math.random()*10000,
+            iterations:Infinity
+        }
+    );
+
+    body.appendChild(spider);
+}
+
+
+/* Current year */
+
+document.querySelector("footer p").innerHTML =
+    "© " + new Date().getFullYear() +
+    " <strong>XLM SPIDER</strong>";
+
+</script>
+
+</body>
+</html>
