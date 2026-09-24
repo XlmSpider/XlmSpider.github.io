@@ -2,125 +2,122 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>XLM SPIDER | The Web Has Arrived</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>XLM SPIDER — Digital Web3 Project</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
-
-:root{
-  --red:#ff1744;
-  --red2:#b00020;
-  --dark:#020204;
-  --panel:rgba(10,10,15,.78);
-  --line:rgba(255,23,68,.35);
-  --cyan:#00eaff;
-  --white:#f5f5f5;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-  background:#010103;
-  color:white;
-  font-family:Rajdhani,sans-serif;
-  overflow-x:hidden;
+    background:#030303;
+    color:#fff;
+    font-family:'Rajdhani',sans-serif;
+    overflow-x:hidden;
 }
 
 /* =========================
-   CINEMATIC BACKGROUND
+   BACKGROUND
 ========================= */
 
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-20;
-  background:
-    radial-gradient(circle at 50% 25%,rgba(255,0,45,.18),transparent 30%),
-    radial-gradient(circle at 15% 80%,rgba(120,0,20,.12),transparent 30%),
-    radial-gradient(circle at 90% 60%,rgba(255,0,40,.08),transparent 30%),
-    linear-gradient(135deg,#000 0%,#090004 50%,#000 100%);
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    background:
+        radial-gradient(circle at 50% 20%,rgba(255,0,45,.16),transparent 35%),
+        radial-gradient(circle at 80% 80%,rgba(0,110,255,.08),transparent 30%),
+        linear-gradient(120deg,#020202,#080808,#010101);
 }
 
-body:after{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:50;
-  pointer-events:none;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,.018) 0px,
-      rgba(255,255,255,.018) 1px,
-      transparent 1px,
-      transparent 5px
-    );
-  mix-blend-mode:screen;
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:20;
+    pointer-events:none;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,.018) 0px,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+    mix-blend-mode:screen;
 }
 
 /* DIGITAL GRID */
 
 .grid{
-  position:fixed;
-  inset:0;
-  z-index:-15;
-  opacity:.25;
-  background-image:
-    linear-gradient(rgba(255,0,40,.08) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,0,40,.08) 1px,transparent 1px);
-  background-size:55px 55px;
-  transform:perspective(500px) rotateX(55deg) scale(1.7);
-  transform-origin:center bottom;
+    position:fixed;
+    inset:0;
+    z-index:-3;
+    opacity:.22;
+    background-image:
+        linear-gradient(rgba(255,0,40,.08) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,0,40,.08) 1px,transparent 1px);
+    background-size:50px 50px;
+    transform:perspective(600px) rotateX(55deg) scale(1.7);
+    transform-origin:center bottom;
 }
 
 /* =========================
-   NAV
+   NAVBAR
 ========================= */
 
 nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:100;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:18px 6%;
-
-  background:rgba(0,0,0,.72);
-  backdrop-filter:blur(18px);
-
-  border-bottom:1px solid rgba(255,23,68,.25);
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:100;
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    background:rgba(0,0,0,.68);
+    border-bottom:1px solid rgba(255,0,45,.25);
+    backdrop-filter:blur(15px);
 }
 
 .nav-logo{
-  font-family:Orbitron;
-  font-weight:900;
-  letter-spacing:3px;
-  font-size:18px;
+    font-family:'Orbitron';
+    font-weight:900;
+    letter-spacing:3px;
+    color:#fff;
 }
 
-.nav-logo span{color:var(--red)}
-
-nav a{
-  color:#aaa;
-  text-decoration:none;
-  margin-left:25px;
-  font-family:Orbitron;
-  font-size:11px;
-  letter-spacing:2px;
-  transition:.3s;
+.nav-logo span{
+    color:#ff163d;
 }
 
-nav a:hover{
-  color:white;
-  text-shadow:0 0 15px var(--red);
+.nav-status{
+    font-size:13px;
+    letter-spacing:2px;
+    color:#aaa;
+}
+
+.dot{
+    display:inline-block;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#ff1642;
+    box-shadow:0 0 12px #ff1642;
+    margin-right:7px;
 }
 
 /* =========================
@@ -128,301 +125,309 @@ nav a:hover{
 ========================= */
 
 .hero{
-  min-height:100vh;
-  position:relative;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  text-align:center;
-
-  padding:130px 20px 80px;
-  overflow:hidden;
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:100px 20px 50px;
+    overflow:hidden;
 }
 
 .hero-content{
-  max-width:1100px;
-  position:relative;
-  z-index:5;
+    position:relative;
+    z-index:10;
+    max-width:900px;
 }
 
-/* MOVIE POSTER LOGO */
-
-.poster-logo{
-  width:270px;
-  height:270px;
-  margin:0 auto 35px;
-
-  position:relative;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(circle at center,
-      #ff244d 0%,
-      #7b0019 25%,
-      #0b0004 58%,
-      #000 72%);
-
-  border:2px solid rgba(255,255,255,.25);
-
-  box-shadow:
-    0 0 25px rgba(255,0,50,.7),
-    0 0 100px rgba(255,0,50,.25),
-    inset 0 0 80px rgba(255,0,50,.35);
-
-  animation:posterPulse 4s infinite;
+.kicker{
+    color:#ff2147;
+    font-family:'Orbitron';
+    font-size:12px;
+    letter-spacing:7px;
+    margin-bottom:18px;
+    text-shadow:0 0 15px rgba(255,0,50,.7);
 }
 
-.poster-logo:before,
-.poster-logo:after{
-  content:"";
-  position:absolute;
-  inset:-18px;
-  border:1px solid rgba(255,23,68,.3);
-  border-radius:50%;
+h1{
+    font-family:'Orbitron';
+    font-size:clamp(48px,10vw,110px);
+    font-weight:900;
+    line-height:.95;
+    letter-spacing:-5px;
+    text-transform:uppercase;
+    text-shadow:
+        0 0 8px rgba(255,255,255,.3),
+        0 0 35px rgba(255,0,40,.25);
 }
 
-.poster-logo:after{
-  inset:-35px;
-  border-color:rgba(255,255,255,.08);
+h1 span{
+    color:#ff173e;
 }
 
-@keyframes posterPulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.025)}
-}
-
-/* XLM CORE */
-
-.xlm-core{
-  width:125px;
-  height:125px;
-
-  border-radius:50%;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-family:Orbitron;
-  font-weight:900;
-  font-size:25px;
-
-  color:#050505;
-
-  background:
-    radial-gradient(circle at 35% 25%,#fff,#bdbdbd 30%,#555 65%,#111);
-
-  border:4px solid white;
-
-  box-shadow:
-    0 0 25px white,
-    0 0 70px rgba(255,255,255,.25);
-}
-
-/* DIGITAL SPIDER */
-
-.digital-spider{
-  position:absolute;
-  top:15px;
-  left:50%;
-  transform:translateX(-50%);
-  width:150px;
-  height:130px;
-}
-
-/* body */
-
-.spider-body{
-  position:absolute;
-  width:42px;
-  height:60px;
-  border-radius:50%;
-  left:54px;
-  top:35px;
-
-  background:
-    radial-gradient(circle at 35% 25%,#ff4d70,#b00028 45%,#170006);
-
-  border:2px solid #ff4968;
-
-  box-shadow:
-    0 0 12px #ff1744,
-    0 0 35px rgba(255,23,68,.7);
-}
-
-.spider-head{
-  position:absolute;
-  width:35px;
-  height:35px;
-  border-radius:50%;
-  left:58px;
-  top:5px;
-
-  background:#080808;
-  border:2px solid #ff1744;
-
-  box-shadow:0 0 20px #ff1744;
-}
-
-.eye{
-  position:absolute;
-  width:8px;
-  height:8px;
-  background:#00eaff;
-  border-radius:50%;
-  top:12px;
-  box-shadow:0 0 12px #00eaff;
-}
-
-.eye.one{left:7px}
-.eye.two{right:7px}
-
-/* spider legs */
-
-.leg{
-  position:absolute;
-  width:65px;
-  height:2px;
-  background:linear-gradient(90deg,#ff1744,transparent);
-  transform-origin:left center;
-  box-shadow:0 0 8px #ff1744;
-}
-
-.l1{left:62px;top:55px;transform:rotate(205deg)}
-.l2{left:62px;top:60px;transform:rotate(225deg)}
-.l3{left:62px;top:66px;transform:rotate(245deg)}
-.l4{left:95px;top:55px;transform:rotate(-25deg)}
-.l5{left:95px;top:60px;transform:rotate(-45deg)}
-.l6{left:95px;top:66px;transform:rotate(-65deg)}
-
-.hero-title{
-  font-family:Orbitron;
-  font-weight:900;
-
-  font-size:clamp(48px,10vw,110px);
-
-  letter-spacing:8px;
-
-  background:
-    linear-gradient(
-      180deg,
-      white 0%,
-      #ff4a68 28%,
-      #ff1744 55%,
-      #65000f 100%
-    );
-
-  -webkit-background-clip:text;
-  color:transparent;
-
-  text-shadow:
-    0 0 35px rgba(255,0,40,.2);
-}
-
-.tagline{
-  font-family:Orbitron;
-  letter-spacing:7px;
-  color:#aaa;
-  font-size:clamp(11px,2vw,17px);
-  margin-top:5px;
-}
-
-.hero-text{
-  max-width:720px;
-  margin:30px auto;
-
-  color:#aaa;
-  font-size:20px;
-  line-height:1.7;
+.hero-sub{
+    margin:25px auto;
+    max-width:650px;
+    color:#bdbdbd;
+    font-size:20px;
+    line-height:1.5;
 }
 
 .hero-buttons{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
 .btn{
-  padding:16px 30px;
-  text-decoration:none;
-  font-family:Orbitron;
-  font-weight:800;
-  letter-spacing:1px;
-  font-size:11px;
-
-  transition:.3s;
+    text-decoration:none;
+    padding:15px 25px;
+    border:1px solid rgba(255,255,255,.18);
+    color:#fff;
+    background:rgba(255,255,255,.04);
+    font-family:'Orbitron';
+    font-size:11px;
+    letter-spacing:2px;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
 }
 
-.primary{
-  color:white;
-  background:var(--red);
-  box-shadow:0 0 30px rgba(255,23,68,.4);
+.btn::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,transparent,#ff1744,transparent);
+    transform:translateX(-100%);
+    transition:.4s;
+    opacity:.25;
 }
 
-.primary:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 50px rgba(255,23,68,.8);
+.btn:hover::before{
+    transform:translateX(100%);
 }
 
-.secondary{
-  color:white;
-  border:1px solid #555;
-  background:#050505;
+.btn:hover{
+    border-color:#ff1744;
+    box-shadow:0 0 25px rgba(255,0,50,.3);
+    transform:translateY(-3px);
 }
 
-.secondary:hover{
-  border-color:var(--red);
-  color:var(--red);
+.btn.red{
+    background:#e50935;
+    border-color:#ff1744;
 }
 
 /* =========================
-   DIGITAL SPIDERS
+   GIANT XLM
 ========================= */
 
-.cyber-spider{
-  position:absolute;
-  width:100px;
-  height:100px;
-  opacity:.5;
-  filter:drop-shadow(0 0 8px #ff1744);
-  animation:floatSpider 12s linear infinite;
+.xlm-world{
+    position:absolute;
+    width:560px;
+    height:560px;
+    left:50%;
+    top:55%;
+    transform:translate(-50%,-50%);
+    opacity:.9;
+    z-index:1;
 }
 
-.cyber-spider:nth-child(1){
-  left:5%;
-  top:25%;
+.xlm{
+    position:absolute;
+    width:350px;
+    height:350px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(-12deg);
+    border-radius:50%;
+    background:
+        radial-gradient(circle at 35% 30%,#444,#151515 45%,#050505 75%);
+    border:8px solid #282828;
+    box-shadow:
+        0 0 0 3px #ff183f,
+        0 0 45px rgba(255,0,50,.65),
+        inset 0 0 40px rgba(255,0,40,.25);
 }
 
-.cyber-spider:nth-child(2){
-  right:5%;
-  top:45%;
-  animation-duration:17s;
+.xlm::before{
+    content:"XLM";
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Orbitron';
+    font-size:78px;
+    font-weight:900;
+    color:#eee;
+    text-shadow:0 0 20px #ff1643;
 }
 
-.cyber-spider:nth-child(3){
-  left:15%;
-  bottom:10%;
-  animation-duration:20s;
+.xlm::after{
+    content:"STELLAR NETWORK";
+    position:absolute;
+    bottom:70px;
+    width:100%;
+    text-align:center;
+    font-family:'Orbitron';
+    font-size:9px;
+    letter-spacing:5px;
+    color:#ff3758;
 }
 
-@keyframes floatSpider{
-  0%{
-    transform:translateY(-100px) rotate(0deg);
-  }
-  50%{
-    transform:translateY(250px) rotate(180deg);
-  }
-  100%{
-    transform:translateY(-100px) rotate(360deg);
-  }
+/* =========================
+   HERO SPIDER
+========================= */
+
+.spider-main{
+    position:absolute;
+    width:260px;
+    height:210px;
+    left:50%;
+    top:38%;
+    transform:translate(-50%,-50%) rotate(-12deg);
+    z-index:5;
+    animation:spiderJump 5s ease-in-out infinite;
+}
+
+.spider-head{
+    position:absolute;
+    width:80px;
+    height:70px;
+    left:90px;
+    top:15px;
+    border-radius:48% 48% 43% 43%;
+    background:
+        radial-gradient(circle at 35% 30%,#333,#111 55%,#050505);
+    border:3px solid #ff173f;
+    box-shadow:0 0 25px rgba(255,0,45,.6);
+}
+
+.eye{
+    position:absolute;
+    width:22px;
+    height:34px;
+    top:18px;
+    background:#fff;
+    border:2px solid #ff173f;
+    box-shadow:0 0 12px #fff;
+}
+
+.eye.left{
+    left:13px;
+    transform:skew(-12deg) rotate(20deg);
+}
+
+.eye.right{
+    right:13px;
+    transform:skew(12deg) rotate(-20deg);
+}
+
+.spider-body{
+    position:absolute;
+    width:105px;
+    height:110px;
+    left:78px;
+    top:75px;
+    border-radius:48% 48% 42% 42%;
+    background:
+        linear-gradient(145deg,#252525,#050505);
+    border:3px solid #ff173f;
+    box-shadow:0 0 30px rgba(255,0,45,.45);
+}
+
+.suit-line{
+    position:absolute;
+    left:50%;
+    top:10px;
+    width:2px;
+    height:85px;
+    background:#ff173f;
+    box-shadow:0 0 8px #ff173f;
+}
+
+.suit-x{
+    position:absolute;
+    width:65px;
+    height:65px;
+    left:20px;
+    top:20px;
+}
+
+.suit-x::before,
+.suit-x::after{
+    content:"";
+    position:absolute;
+    left:31px;
+    top:0;
+    width:3px;
+    height:65px;
+    background:#ff173f;
+    transform:rotate(45deg);
+}
+
+.suit-x::after{
+    transform:rotate(-45deg);
+}
+
+/* LEGS */
+
+.leg{
+    position:absolute;
+    width:90px;
+    height:15px;
+    background:#090909;
+    border:2px solid #ff173f;
+    border-radius:50%;
+    transform-origin:left center;
+}
+
+.l1{left:84px;top:95px;transform:rotate(150deg);}
+.l2{left:83px;top:115px;transform:rotate(170deg);}
+.l3{left:84px;top:135px;transform:rotate(195deg);}
+.r1{right:82px;top:95px;transform:rotate(30deg);}
+.r2{right:82px;top:115px;transform:rotate(10deg);}
+.r3{right:82px;top:135px;transform:rotate(-15deg);}
+
+@keyframes spiderJump{
+    0%,100%{
+        transform:translate(-50%,-50%) rotate(-12deg);
+    }
+    50%{
+        transform:translate(-50%,-75%) rotate(-7deg);
+    }
+}
+
+/* WEB */
+
+.web{
+    position:absolute;
+    width:650px;
+    height:650px;
+    left:50%;
+    top:40%;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.12);
+    z-index:0;
+}
+
+.web::before,
+.web::after{
+    content:"";
+    position:absolute;
+    inset:45px;
+    border-radius:50%;
+    border:1px solid rgba(255,0,50,.13);
+}
+
+.web::after{
+    inset:100px;
+    border-color:rgba(255,255,255,.08);
 }
 
 /* =========================
@@ -430,28 +435,28 @@ nav a:hover{
 ========================= */
 
 section{
-  padding:120px 7%;
-  position:relative;
+    position:relative;
+    padding:110px 7%;
 }
 
-.section-head{
-  text-align:center;
-  margin-bottom:60px;
+.section-title{
+    text-align:center;
+    font-family:'Orbitron';
+    font-size:clamp(28px,5vw,52px);
+    margin-bottom:20px;
 }
 
-.section-head h2{
-  font-family:Orbitron;
-  font-size:clamp(30px,5vw,55px);
+.section-title span{
+    color:#ff173f;
 }
 
-.section-head h2 span{
-  color:var(--red);
-}
-
-.section-head p{
-  color:#666;
-  margin-top:12px;
-  font-size:17px;
+.section-desc{
+    max-width:720px;
+    margin:0 auto 55px;
+    text-align:center;
+    color:#aaa;
+    font-size:18px;
+    line-height:1.6;
 }
 
 /* =========================
@@ -459,300 +464,209 @@ section{
 ========================= */
 
 .cards{
-  max-width:1200px;
-  margin:auto;
-
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
 .card{
-  position:relative;
-
-  background:
-    linear-gradient(145deg,
-      rgba(255,255,255,.045),
-      rgba(255,0,40,.025));
-
-  border:1px solid rgba(255,255,255,.08);
-
-  padding:35px;
-
-  min-height:250px;
-
-  overflow:hidden;
-
-  transition:.4s;
-}
-
-.card:after{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  right:-100px;
-  bottom:-100px;
-  border-radius:50%;
-  background:rgba(255,0,40,.12);
-  filter:blur(20px);
+    min-height:290px;
+    padding:30px;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.015));
+    border:1px solid rgba(255,255,255,.12);
+    transition:.35s;
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  border-color:var(--red);
-  box-shadow:0 20px 70px rgba(255,0,40,.1);
+    transform:translateY(-10px);
+    border-color:#ff173f;
+    box-shadow:0 20px 50px rgba(255,0,45,.18);
 }
 
 .card-number{
-  font-family:Orbitron;
-  color:var(--red);
-  font-size:12px;
-  letter-spacing:3px;
+    font-family:'Orbitron';
+    font-size:11px;
+    color:#ff173f;
+    letter-spacing:3px;
 }
 
 .card h3{
-  font-family:Orbitron;
-  margin:20px 0 12px;
+    font-family:'Orbitron';
+    margin:55px 0 15px;
+    font-size:22px;
 }
 
 .card p{
-  color:#888;
-  font-size:17px;
-  line-height:1.7;
+    color:#aaa;
+    line-height:1.6;
+}
+
+/* CARD SPIDERS */
+
+.mini-spider{
+    position:absolute;
+    right:20px;
+    top:15px;
+    width:85px;
+    height:70px;
+}
+
+.mini-body{
+    position:absolute;
+    width:32px;
+    height:38px;
+    left:27px;
+    top:18px;
+    border-radius:50%;
+    background:#111;
+    border:2px solid #ff173f;
+    box-shadow:0 0 15px rgba(255,0,45,.5);
+}
+
+.mini-head{
+    position:absolute;
+    width:25px;
+    height:23px;
+    left:31px;
+    top:0;
+    border-radius:50%;
+    background:#080808;
+    border:2px solid #fff;
+}
+
+.mini-leg{
+    position:absolute;
+    width:42px;
+    height:3px;
+    background:#ff173f;
+    transform-origin:left;
+}
+
+.ml1{left:28px;top:25px;transform:rotate(150deg)}
+.ml2{left:28px;top:34px;transform:rotate(170deg)}
+.ml3{left:29px;top:43px;transform:rotate(195deg)}
+.mr1{left:56px;top:25px;transform:rotate(30deg)}
+.mr2{left:56px;top:34px;transform:rotate(10deg)}
+.mr3{left:55px;top:43px;transform:rotate(-15deg)}
+
+.card:nth-child(2) .mini-body{
+    border-color:#00d9ff;
+}
+
+.card:nth-child(2) .mini-leg{
+    background:#00d9ff;
+}
+
+.card:nth-child(3) .mini-body{
+    border-color:#a900ff;
+}
+
+.card:nth-child(3) .mini-leg{
+    background:#a900ff;
 }
 
 /* =========================
-   TOKEN TERMINAL
+   TOKEN
 ========================= */
 
-.terminal{
-  max-width:1050px;
-  margin:auto;
-
-  background:rgba(5,5,8,.9);
-
-  border:1px solid rgba(255,23,68,.35);
-
-  box-shadow:
-    0 0 80px rgba(255,0,40,.06);
+.token-box{
+    max-width:1000px;
+    margin:auto;
+    padding:45px;
+    border:1px solid rgba(255,0,50,.3);
+    background:
+        linear-gradient(135deg,rgba(255,0,40,.06),rgba(0,0,0,.7));
+    box-shadow:0 0 50px rgba(255,0,40,.08);
 }
 
-.terminal-top{
-  padding:13px 18px;
-  background:#0c0c10;
-  border-bottom:1px solid rgba(255,255,255,.08);
-
-  display:flex;
-  align-items:center;
-  gap:8px;
+.token-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
 }
 
-.dot{
-  width:9px;
-  height:9px;
-  border-radius:50%;
+.token-item{
+    padding:22px;
+    border-left:2px solid #ff173f;
+    background:rgba(255,255,255,.025);
 }
 
-.dot.red{background:#ff1744}
-.dot.yellow{background:#ffc400}
-.dot.green{background:#00e676}
-
-.terminal-title{
-  margin-left:10px;
-  color:#666;
-  font-family:Orbitron;
-  font-size:10px;
+.token-label{
+    color:#777;
+    font-family:'Orbitron';
+    font-size:10px;
+    letter-spacing:2px;
+    margin-bottom:8px;
 }
 
-.terminal-body{
-  padding:35px;
-  font-family:monospace;
-}
-
-.line{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-
-  padding:17px 0;
-
-  border-bottom:1px solid rgba(255,255,255,.05);
-}
-
-.line:last-child{border:0}
-
-.key{
-  color:#777;
-}
-
-.value{
-  color:#fff;
-  text-align:right;
-  word-break:break-all;
-}
-
-.issuer{
-  color:#ff4265;
+.token-value{
+    font-size:19px;
+    font-weight:700;
+    word-break:break-all;
 }
 
 /* =========================
-   ASCENSION
+   THREE CONNECTIONS
 ========================= */
 
-.ascension{
-  max-width:1150px;
-  margin:auto;
-
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
+.connections{
+    background:
+        radial-gradient(circle at center,rgba(255,0,40,.08),transparent 45%);
 }
 
-.ascension h2{
-  font-family:Orbitron;
-  font-size:45px;
+.connection-card{
+    text-decoration:none;
+    color:white;
+    text-align:center;
+    min-height:340px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
 }
 
-.ascension h2 span{
-  color:var(--red);
+.connection-card h3{
+    margin:15px 0 8px;
 }
 
-.ascension p{
-  color:#888;
-  font-size:19px;
-  line-height:1.8;
-  margin-top:20px;
+.connection-card p{
+    font-size:15px;
 }
 
-.chart{
-  height:390px;
-
-  position:relative;
-
-  background:
-    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
-
-  background-size:40px 40px;
-
-  border:1px solid rgba(255,255,255,.08);
-
-  overflow:hidden;
+.connection-spider{
+    height:160px;
+    position:relative;
+    margin-bottom:20px;
 }
 
-.chart-line{
-  position:absolute;
-  width:130%;
-  height:4px;
-
-  left:-15%;
-  bottom:65px;
-
-  background:var(--red);
-
-  transform:rotate(-24deg);
-
-  box-shadow:
-    0 0 12px var(--red),
-    0 0 35px var(--red);
+.big-mini{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:120px;
+    height:100px;
 }
 
-.chart-arrow{
-  position:absolute;
-  right:35px;
-  top:30px;
-
-  color:var(--red);
-
-  font-size:70px;
-
-  filter:drop-shadow(0 0 15px var(--red));
-
-  animation:arrow 2s infinite;
+.big-mini .mini-body{
+    transform:scale(1.5);
+    transform-origin:center;
 }
 
-@keyframes arrow{
-  50%{transform:translateY(-15px)}
+.connection-card:nth-child(1){
+    border-bottom:3px solid #ff1744;
 }
 
-/* =========================
-   ACCESS
-========================= */
-
-.access{
-  max-width:1150px;
-  margin:auto;
-
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+.connection-card:nth-child(2){
+    border-bottom:3px solid #00d9ff;
 }
 
-.access-card{
-  text-align:center;
-  padding:38px 25px;
-
-  background:#0a0a0d;
-
-  border:1px solid rgba(255,255,255,.08);
-
-  transition:.3s;
-}
-
-.access-card:nth-child(1){
-  border-color:#00eaff;
-}
-
-.access-card:nth-child(2){
-  border-color:#ffc400;
-}
-
-.access-card:nth-child(3){
-  border-color:#ff1744;
-}
-
-.access-card:hover{
-  transform:translateY(-8px);
-}
-
-.access-card h3{
-  font-family:Orbitron;
-  margin-bottom:15px;
-}
-
-.access-card p{
-  color:#777;
-  min-height:60px;
-  line-height:1.6;
-}
-
-.access-card a{
-  display:inline-block;
-  margin-top:20px;
-
-  padding:13px 20px;
-
-  color:#050505;
-  text-decoration:none;
-
-  font-family:Orbitron;
-  font-weight:900;
-  font-size:11px;
-}
-
-.access-card:nth-child(1) a{
-  background:#00eaff;
-}
-
-.access-card:nth-child(2) a{
-  background:#ffc400;
-}
-
-.access-card:nth-child(3) a{
-  background:#ff1744;
-  color:white;
+.connection-card:nth-child(3){
+    border-bottom:3px solid #9d00ff;
 }
 
 /* =========================
@@ -760,66 +674,99 @@ section{
 ========================= */
 
 footer{
-  padding:70px 20px;
-  text-align:center;
-
-  border-top:1px solid rgba(255,255,255,.07);
-
-  color:#555;
+    text-align:center;
+    padding:60px 20px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#555;
 }
 
-footer strong{
-  color:var(--red);
-  font-family:Orbitron;
+.footer-logo{
+    font-family:'Orbitron';
+    font-size:24px;
+    color:#fff;
+    margin-bottom:12px;
+}
+
+.footer-logo span{
+    color:#ff173f;
 }
 
 /* =========================
-   MOBILE
+   RESPONSIVE
 ========================= */
 
 @media(max-width:800px){
 
-  nav .links{
-    display:none;
-  }
+    nav{
+        padding:0 20px;
+    }
 
-  .poster-logo{
-    width:210px;
-    height:210px;
-  }
+    .nav-status{
+        display:none;
+    }
 
-  .xlm-core{
-    width:100px;
-    height:100px;
-    font-size:20px;
-  }
+    .xlm-world{
+        width:430px;
+        height:430px;
+    }
 
-  .hero-title{
-    letter-spacing:3px;
-  }
+    .xlm{
+        width:270px;
+        height:270px;
+    }
 
-  .cards,
-  .access,
-  .ascension{
-    grid-template-columns:1fr;
-  }
+    .xlm::before{
+        font-size:55px;
+    }
 
-  .ascension h2{
-    font-size:34px;
-  }
+    .web{
+        width:500px;
+        height:500px;
+    }
 
-  .chart{
-    height:300px;
-  }
+    .cards{
+        grid-template-columns:1fr;
+    }
 
-  .line{
-    flex-direction:column;
-  }
+    .token-grid{
+        grid-template-columns:1fr;
+    }
 
-  .value{
-    text-align:left;
-  }
+    .token-box{
+        padding:25px;
+    }
 
+    section{
+        padding:80px 20px;
+    }
+}
+
+@media(max-width:500px){
+
+    h1{
+        letter-spacing:-2px;
+    }
+
+    .hero-sub{
+        font-size:17px;
+    }
+
+    .spider-main{
+        transform:translate(-50%,-50%) scale(.75) rotate(-12deg);
+    }
+
+    .xlm-world{
+        opacity:.45;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        padding:0 20px;
+    }
+
+    .btn{
+        width:100%;
+    }
 }
 </style>
 </head>
@@ -829,163 +776,177 @@ footer strong{
 <div class="grid"></div>
 
 <!-- NAV -->
-
 <nav>
-  <div class="nav-logo">
-    XLM <span>SPIDER</span>
-  </div>
+    <div class="nav-logo">
+        XLM<span>SPIDER</span>
+    </div>
 
-  <div class="links">
-    <a href="#about">ABOUT</a>
-    <a href="#token">TOKEN</a>
-    <a href="#vision">VISION</a>
-    <a href="#access">ACCESS</a>
-  </div>
+    <div class="nav-status">
+        <span class="dot"></span>
+        STELLAR NETWORK // ONLINE
+    </div>
 </nav>
 
 
 <!-- HERO -->
-
 <header class="hero">
 
-  <!-- Digital Spider 1 -->
+    <div class="web"></div>
 
-  <div class="cyber-spider">
-    <div class="spider-body"></div>
-    <div class="spider-head"></div>
-    <div class="eye one"></div>
-    <div class="eye two"></div>
-    <div class="leg l1"></div>
-    <div class="leg l2"></div>
-    <div class="leg l3"></div>
-    <div class="leg l4"></div>
-    <div class="leg l5"></div>
-    <div class="leg l6"></div>
-  </div>
+    <div class="xlm-world">
+        <div class="xlm"></div>
+    </div>
 
-  <!-- Digital Spider 2 -->
-
-  <div class="cyber-spider">
-    <div class="spider-body"></div>
-    <div class="spider-head"></div>
-    <div class="eye one"></div>
-    <div class="eye two"></div>
-    <div class="leg l1"></div>
-    <div class="leg l2"></div>
-    <div class="leg l3"></div>
-    <div class="leg l4"></div>
-    <div class="leg l5"></div>
-    <div class="leg l6"></div>
-  </div>
-
-  <div class="hero-content">
-
-    <!-- MOVIE LOGO -->
-
-    <div class="poster-logo">
-
-      <div class="xlm-core">
-        XLM
-      </div>
-
-      <div class="digital-spider">
+    <!-- MAIN SPIDER -->
+    <div class="spider-main">
 
         <div class="spider-head">
-          <div class="eye one"></div>
-          <div class="eye two"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
         </div>
 
-        <div class="spider-body"></div>
+        <div class="spider-body">
+            <div class="suit-line"></div>
+            <div class="suit-x"></div>
+        </div>
 
         <div class="leg l1"></div>
         <div class="leg l2"></div>
         <div class="leg l3"></div>
-        <div class="leg l4"></div>
-        <div class="leg l5"></div>
-        <div class="leg l6"></div>
-
-      </div>
+        <div class="leg r1"></div>
+        <div class="leg r2"></div>
+        <div class="leg r3"></div>
 
     </div>
 
-    <h1 class="hero-title">
-      XLM SPIDER
-    </h1>
 
-    <div class="tagline">
-      THE WEB HAS ARRIVED
+    <div class="hero-content">
+
+        <div class="kicker">
+            STELLAR DIGITAL WEB3 PROJECT
+        </div>
+
+        <h1>
+            XLM<br>
+            <span>SPIDER</span>
+        </h1>
+
+        <p class="hero-sub">
+            A cinematic digital asset project built around the Stellar network.
+            Enter the web. Explore the network. Discover XLM Spider.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a class="btn red"
+               href="https://stellar.expert/explorer/public/account/GBX7RXOIQKA6PY5DPOMAGC4A5VVCXACRN74GIEW6ERW53SMAE5CFKVKE"
+               target="_blank">
+                ENTER THE WEB
+            </a>
+
+            <a class="btn"
+               href="#token">
+                TOKEN DATA
+            </a>
+
+        </div>
+
     </div>
-
-    <p class="hero-text">
-      A cinematic digital asset project built on the Stellar network.
-      One web. One vision. Infinite possibilities.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="#token" class="btn primary">
-        ENTER THE WEB
-      </a>
-
-      <a href="#access" class="btn secondary">
-        EXPLORE TOKEN
-      </a>
-    </div>
-
-  </div>
 
 </header>
 
 
 <!-- ABOUT -->
 
-<section id="about">
+<section>
 
-  <div class="section-head">
+    <h2 class="section-title">
+        ENTER THE <span>SPIDER WEB</span>
+    </h2>
 
-    <h2>BUILT FOR THE <span>WEB3 ERA</span></h2>
-
-    <p>
-      A new identity inside the Stellar ecosystem.
+    <p class="section-desc">
+        XLM Spider is a digital asset concept designed for the Stellar ecosystem,
+        combining Web3 technology, cinematic visual identity and a decentralized
+        network experience.
     </p>
 
-  </div>
+    <div class="cards">
 
-  <div class="cards">
+        <div class="card">
 
-    <div class="card">
-      <div class="card-number">01 / SPIDER</div>
+            <div class="card-number">01 // NETWORK</div>
 
-      <h3>THE DIGITAL SPIDER</h3>
+            <h3>BUILT ON STELLAR</h3>
 
-      <p>
-        A symbol of connection, patience and construction.
-        Every thread represents another path through the digital web.
-      </p>
+            <p>
+                XLM Spider is designed around the Stellar network,
+                providing a fast and accessible environment for digital assets.
+            </p>
+
+            <div class="mini-spider">
+                <div class="mini-head"></div>
+                <div class="mini-body"></div>
+                <div class="mini-leg ml1"></div>
+                <div class="mini-leg ml2"></div>
+                <div class="mini-leg ml3"></div>
+                <div class="mini-leg mr1"></div>
+                <div class="mini-leg mr2"></div>
+                <div class="mini-leg mr3"></div>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-number">02 // DIGITAL</div>
+
+            <h3>THE DIGITAL WEB</h3>
+
+            <p>
+                A visual identity inspired by futuristic networks,
+                cyber environments and the mysterious world of the spider.
+            </p>
+
+            <div class="mini-spider">
+                <div class="mini-head"></div>
+                <div class="mini-body"></div>
+                <div class="mini-leg ml1"></div>
+                <div class="mini-leg ml2"></div>
+                <div class="mini-leg ml3"></div>
+                <div class="mini-leg mr1"></div>
+                <div class="mini-leg mr2"></div>
+                <div class="mini-leg mr3"></div>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-number">03 // VISION</div>
+
+            <h3>CONNECT THE WEB</h3>
+
+            <p>
+                The project aims to create a recognizable digital identity
+                connecting community, creativity and Stellar-based assets.
+            </p>
+
+            <div class="mini-spider">
+                <div class="mini-head"></div>
+                <div class="mini-body"></div>
+                <div class="mini-leg ml1"></div>
+                <div class="mini-leg ml2"></div>
+                <div class="mini-leg ml3"></div>
+                <div class="mini-leg mr1"></div>
+                <div class="mini-leg mr2"></div>
+                <div class="mini-leg mr3"></div>
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="card">
-      <div class="card-number">02 / STELLAR</div>
-
-      <h3>STELLAR POWER</h3>
-
-      <p>
-        XLM SPIDER is designed around the Stellar ecosystem,
-        combining a cinematic identity with blockchain technology.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-number">03 / FUTURE</div>
-
-      <h3>BUILD THE WEB</h3>
-
-      <p>
-        The vision is to develop a recognizable digital brand,
-        expand the community and create useful future applications.
-      </p>
-    </div>
-
-  </div>
 
 </section>
 
@@ -994,223 +955,78 @@ footer strong{
 
 <section id="token">
 
-  <div class="section-head">
+    <h2 class="section-title">
+        TOKEN <span>CORE</span>
+    </h2>
 
-    <h2>PROJECT <span>CORE</span></h2>
-
-    <p>
-      Official project information
+    <p class="section-desc">
+        Core information connected to the XLM Spider Stellar asset.
     </p>
 
-  </div>
+    <div class="token-box">
 
-  <div class="terminal">
+        <div class="token-grid">
 
-    <div class="terminal-top">
-      <div class="dot red"></div>
-      <div class="dot yellow"></div>
-      <div class="dot green"></div>
+            <div class="token-item">
+                <div class="token-label">PROJECT</div>
+                <div class="token-value">XLM Spider</div>
+            </div>
 
-      <div class="terminal-title">
-        XLM_SPIDER_CORE.exe
-      </div>
-    </div>
+            <div class="token-item">
+                <div class="token-label">ASSET CODE</div>
+                <div class="token-value">SPIDERXLM</div>
+            </div>
 
-    <div class="terminal-body">
+            <div class="token-item">
+                <div class="token-label">NETWORK</div>
+                <div class="token-value">Stellar Mainnet</div>
+            </div>
 
-      <div class="line">
-        <span class="key">PROJECT</span>
-        <span class="value">XLM SPIDER</span>
-      </div>
+            <div class="token-item">
+                <div class="token-label">ISSUER</div>
+                <div class="token-value">
+                    GBX7RXOIQKA6PY5DPOMAGC4A5VVCXACRN74GIEW6ERW53SMAE5CFKVKE
+                </div>
+            </div>
 
-      <div class="line">
-        <span class="key">NETWORK</span>
-        <span class="value">STELLAR MAINNET</span>
-      </div>
-
-      <div class="line">
-        <span class="key">ASSET CODE</span>
-        <span class="value">SPIDERXLM</span>
-      </div>
-
-      <div class="line">
-        <span class="key">ISSUER</span>
-
-        <span class="value issuer">
-          GBX7RXOIQKA6PY5DPOMAGC4A5VVCXACRN74GIEW6ERW53SMAE5CFKVKE
-        </span>
-
-      </div>
-
-      <div class="line">
-        <span class="key">PROJECT STATUS</span>
-        <span class="value">BUILDING THE WEB</span>
-      </div>
+        </div>
 
     </div>
-
-  </div>
 
 </section>
 
 
-<!-- VISION -->
+<!-- CONNECTIONS -->
 
-<section id="vision">
+<section class="connections">
 
-  <div class="section-head">
+    <h2 class="section-title">
+        CONNECT TO THE <span>WEB</span>
+    </h2>
 
-    <h2>THE <span>ASCENSION</span></h2>
-
-    <p>
-      From one thread to an entire digital web.
+    <p class="section-desc">
+        Three access points into the XLM Spider network.
     </p>
 
-  </div>
 
-  <div class="ascension">
-
-    <div>
-
-      <h2>
-        BUILD.<br>
-        CONNECT.<br>
-        <span>ASCEND.</span>
-      </h2>
-
-      <p>
-        XLM SPIDER is built around a simple idea:
-        create a recognizable digital identity and grow it
-        through technology, community and future utility.
-      </p>
-
-      <p>
-        The web starts with a single thread.
-        The next chapter is built together.
-      </p>
-
-    </div>
-
-    <div class="chart">
-
-      <div class="chart-line"></div>
-
-      <div class="chart-arrow">
-        ↗
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+    <div class="cards">
 
 
-<!-- ACCESS -->
+        <!-- ISSUER -->
 
-<section id="access">
+        <a class="card connection-card"
+           href="https://stellar.expert/explorer/public/account/GBX7RXOIQKA6PY5DPOMAGC4A5VVCXACRN74GIEW6ERW53SMAE5CFKVKE"
+           target="_blank">
 
-  <div class="section-head">
+            <div class="connection-spider">
 
-    <h2>ENTER THE <span>NETWORK</span></h2>
+                <div class="big-mini">
 
-    <p>
-      Explore the project through the Stellar ecosystem.
-    </p>
+                    <div class="mini-head"></div>
+                    <div class="mini-body"></div>
 
-  </div>
-
-  <div class="access">
-
-    <div class="access-card">
-
-      <h3>ISSUER</h3>
-
-      <p>
-        View the official XLM SPIDER issuer account.
-      </p>
-
-      <a
-        target="_blank"
-        href="https://stellar.expert/explorer/public/account/GBX7RXOIQKA6PY5DPOMAGC4A5VVCXACRN74GIEW6ERW53SMAE5CFKVKE">
-
-        OPEN ISSUER
-
-      </a>
-
-    </div>
-
-
-    <div class="access-card">
-
-      <h3>EXPLORER</h3>
-
-      <p>
-        Explore the Stellar account and network activity.
-      </p>
-
-      <a
-        target="_blank"
-        href="https://stellar.expert/explorer/public/account/GBX7RXOIQKA6PY5DPOMAGC4A5VVCXACRN74GIEW6ERW53SMAE5CFKVKE">
-
-        EXPLORE
-
-      </a>
-
-    </div>
-
-
-    <div class="access-card">
-
-      <h3>STELLAR LAB</h3>
-
-      <p>
-        Access Stellar tools and blockchain utilities.
-      </p>
-
-      <a
-        target="_blank"
-        href="https://lab.stellar.org/">
-
-        OPEN LAB
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- FINAL -->
-
-<section>
-
-  <div class="section-head">
-
-    <h2>THE WEB IS <span>JUST BEGINNING</span></h2>
-
-    <p>
-      XLM SPIDER — BUILT ON STELLAR.
-    </p>
-
-  </div>
-
-</section>
-
-
-<footer>
-
-  <p>
-    © 2026 <strong>XLM SPIDER</strong>
-  </p>
-
-  <p style="margin-top:10px">
-    A Stellar-based digital asset project.
-  </p>
-
-</footer>
-
-</body>
-</html>
+                    <div class="mini-leg ml1"></div>
+                    <div class="mini-leg ml2"></div>
+                    <div class="mini-leg ml3"></div>
+                    <div class="mini-leg mr1"></div>
+                    <div class="mini-leg mr2"></div>
